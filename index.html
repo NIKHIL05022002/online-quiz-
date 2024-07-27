@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Homepage -->
+    <section id="homepage">
+        <h1>Welcome to Online Quiz Maker</h1>
+        <div>
+            <button onclick="showSection('create-quiz')">Create Quiz</button>
+            <button onclick="showSection('take-quiz')">Take Quiz</button>
+        </div>
+    </section>
+
+    <!-- Quiz Creation -->
+    <section id="create-quiz" style="display: none;">
+        <h2>Create a Quiz</h2>
+        <form id="quiz-creation-form">
+            <label for="quiz-title">Quiz Title:</label>
+            <input type="text" id="quiz-title" name="quiz-title" required>
+
+            <label for="question">Question:</label>
+            <input type="text" id="question" name="question" required>
+
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer" required>
+
+            <button type="submit">Create Quiz</button>
+        </form>
+        <button onclick="showSection('homepage')">Back to Home</button>
+    </section>
+
+    <!-- Quiz Taking -->
+    <section id="take-quiz" style="display: none;">
+        <h2>Take a Quiz</h2>
+        <form id="quiz-taking-form">
+            <label for="quiz-selection">Select Quiz:</label>
+            <select id="quiz-selection" name="quiz-selection">
+                <option value="quiz1">Quiz 1</option>
+                <option value="quiz2">Quiz 2</option>
+            </select>
+            <button type="submit">Start Quiz</button>
+        </form>
+        <div id="quiz-questions" style="display: none;">
+            <!-- Questions will be dynamically loaded here -->
+        </div>
+        <button onclick="showSection('homepage')">Back to Home</button>
+    </section>
+
+    <!-- Quiz Result -->
+    <section id="quiz-result" style="display: none;">
+        <h2>Quiz Result</h2>
+        <div id="result-display">
+            <!-- Result will be displayed here -->
+        </div>
+        <button onclick="showSection('homepage')">Back to Home</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
